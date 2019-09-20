@@ -1,8 +1,11 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import CreatePost from "./CreatePost";
-import Forum from "./Forum";
+import Gallery from "./Gallery";
+import Suggestions from "./Suggestions";
+import Issues from "./Issues";
 import v4 from "UUID";
+import Header from './Header';
 
 class App extends React.Component {
   constructor(props) {
@@ -43,25 +46,20 @@ class App extends React.Component {
     this.getPostFromId(postListClone, postId).downVotes++;
     this.setState({ postList: postListClone });
   }
-
-  // sortPostList() {
-  //   let postListClone = this.state.postList.slice();
-  //   postListClone.sort(function (a, b) {
-  //     return (b.upVotes - b.downVotes) - (a.upVotes - a.downVotes);
-  //   });
-  //   return postListClone;
-  // }
-
+  
   render() {
     return (
       <div>
         <div>
-          <h1>Upvote Forum</h1>
+          <Header/>
           <hr />
         </div>
         <Switch>
-          <Route exact path='/createPost' render={() => <CreatePost onNewFormPost={this.handleNewFormPost} />} />
-          <Route exact path='/' render={() => <Forum postList={this.state.postList} onUpVote={this.handleUpVote} onDownVote={this.handleDownVote} />} />
+          <Route exact path='/' render={() => <Gallery postList={this.state.postList} onUpVote={this.handleUpVote} onDownVote={this.handleDownVote} />} />
+          <Route exact path='/suggestions' render={() => <Suggestions postList={this.state.postList} onUpVote={this.handleUpVote} onDownVote={this.handleDownVote} />} />
+          <Route exact path='/issues' render={() => <Issues postList={this.state.postList} onUpVote={this.handleUpVote} onDownVote={this.handleDownVote} />} />
+          <Route exact path='/post' render={() => <CreatePost onNewFormPost={this.handleNewFormPost} />} />
+          
         </Switch>
       </div>
     );

@@ -15,7 +15,7 @@ const Forum = (props) => {
   return (
     <div>
       <Link to="/createPost"><button>New Post</button></Link>
-      {sortPostList(props).map(post =>
+      {props.postList.map(post =>
         <Post
           title={post.title}
           bodyText={post.bodyText}
