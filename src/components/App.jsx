@@ -14,7 +14,6 @@ class App extends React.Component {
     this.handleNewFormPost = this.handleNewFormPost.bind(this);
     this.handleUpVote = this.handleUpVote.bind(this);
     this.handleDownVote = this.handleDownVote.bind(this);
-    // this.sortPostList = this.sortPostList.bind(this);
     this.state = {
       postList: [{ title: "first post", bodyText: "first post BLAH BLAH BLAH BLAH BLAH BLAH BLAH", id: v4(), upVotes: 0, downVotes: 0 }]
     };
@@ -66,10 +65,5 @@ class App extends React.Component {
   }
 }
 
-// Ticket.propTypes = {
-//   names: PropTypes.string,
-//   location: PropTypes.string,
-//   issue: PropTypes.string
-// };
 
 export default App;

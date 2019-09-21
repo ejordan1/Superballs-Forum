@@ -13,12 +13,10 @@ const CreatePost = (props) => {
     props.onNewFormPost({ title: _title.value, bodyText: _bodyText.value, upVotes: 0, downVotes: 0, id: v4() });
     _title.value = "";
     _bodyText.value = "";
-    //props. //whatever method we are passing in, pass in variables from form
-    //reset form variable values
+
 
   }
-  //theory: names goes in constructor
-  //theory2: names isnt relevant here.
+
   return (
     <div>
       <form onSubmit={handleNewFormPostSubmission}>
@@ -44,5 +42,3 @@ CreatePost.propTypes = {
 };
 
 export default CreatePost;
-
-//make action the handlermethod we set in app
