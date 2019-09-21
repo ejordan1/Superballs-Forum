@@ -35,7 +35,6 @@ Forum.propTypes = {
   postList: PropTypes.array,
   onUpVote: PropTypes.func,
   onDownVote: PropTypes.func
-  // sortedPostList: PropTypes.array
 };
 
 export default Forum;
