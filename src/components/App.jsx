@@ -5,7 +5,7 @@ import Gallery from "./Gallery";
 import Suggestions from "./Suggestions";
 import Issues from "./Issues";
 import v4 from "UUID";
-import Header from './Header';
+import Header from "./Header";
 
 class App extends React.Component {
   constructor(props) {
