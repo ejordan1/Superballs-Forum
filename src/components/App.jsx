@@ -1,14 +1,13 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
 import CreatePost from "./CreatePost";
 import Gallery from "./Gallery";
 import Suggestions from "./Suggestions";
 import Issues from "./Issues";
 import v4 from "UUID";
 import Header from "./Header";
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import c from './../constants';
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { Switch, Route, withRouter } from 'react-router-dom';
 
 class App extends React.Component {
   // constructor(props) {
@@ -57,9 +56,10 @@ class App extends React.Component {
           <hr />
         </div>
         <Switch>
-          <Route exact path='/' render={() => <Gallery postList={this.state.postList} onUpVote={this.handleUpVote} onDownVote={this.handleDownVote} />} />
+          <Route exact path='/' render={() => <Gallery postList={this.props.galleryForumList} />} />
           {/* <Route exact path='/suggestions' render={() => <Suggestions postList={this.state.postList} onUpVote={this.handleUpVote} onDownVote={this.handleDownVote} />} />
           <Route exact path='/issues' render={() => <Issues postList={this.state.postList} onUpVote={this.handleUpVote} onDownVote={this.handleDownVote} />} /> */}
+          <Route exact path='/post' component={CreatePost} />
           >} />
 
         </Switch>
@@ -74,7 +74,7 @@ App.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    masterTicketList: state.masterTicketList
+    galleryForumList: state.galleryForumList
   };
 };
 

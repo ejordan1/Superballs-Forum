@@ -1,8 +1,8 @@
-import forumPostReducer from './forum-post-reducer';
-import { combineReducers } from 'redux';
+import galleryPostReducer from "./gallery-post-reducer";
+import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
-    forumPostReducer: forumPostReducer
-})
+    galleryForumList: galleryPostReducer
+});
 
 export default rootReducer;

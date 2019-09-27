@@ -1,17 +1,17 @@
 
-export default (state = {}, action) => {
-    let newState;
-    const { id } = action;
+// export default (state = {}, action) => {
+//   let newState;
+//   const { id } = action;
 
-    switch (action.type) {
-        case "UPVOTE":
-            newState = Object.assign({}, state,
-                {
+//   switch (action.type) {
+//   case "UPVOTE":
+//     newState = Object.assign({}, state,
+//       {
 
-                });
-            return newState;
+//       });
+//     return newState;
 
-        default:
-            return state;
-    }
-};
+//   default:
+//     return state;
+//   }
+// };

@@ -4,23 +4,23 @@ import Forum from "./Forum";
 import { Link } from "react-router-dom";
 
 const Gallery = (props) => {
-  return ( 
+  return (
     <div>
       <h2>Gallery</h2>
       <Link to="/post"><button>New Post</button></Link>
-      <Forum 
-        postList = {props.postList}
-        onUpVote = {props.onUpVote}
-        onDownVote = {props.onDownVote}
+      <Forum
+        postList={props.postList}
+      // onUpVote={props.onUpVote}
+      // onDownVote={props.onDownVote}
       />
     </div>
   );
 };
 
 Gallery.propTypes = {
-  postList: PropTypes.array,
-  onUpVote: PropTypes.func,
-  onDownVote: PropTypes.func
+  postList: PropTypes.object
+  // onUpVote: PropTypes.func,
+  // onDownVote: PropTypes.func
 };
- 
+
 export default Gallery;

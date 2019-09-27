@@ -14,25 +14,26 @@ const Forum = (props) => {
 
   return (
     <div>
-      
-      {props.postList.map(post =>
-        <Post
+
+      {Object.keys(props.postList).map(function (postId) {
+        var post = props.postList[postId];
+        return <Post
           title={post.title}
           bodyText={post.bodyText}
-          upVotes={post.upVotes}
-          downVotes={post.downVotes}
-          onUpVote={props.onUpVote}
-          onDownVote={props.onDownVote}
-          key={post.id}
-          postId={post.id}
+          // upVotes={post.upVotes}
+          // downVotes={post.downVotes}
+          // onUpVote={props.onUpVote}
+          // onDownVote={props.onDownVote}
+          key={postId}
+          postId={postId}
         />
-      )}
+      })}
     </div>
   );
 };
 
 Forum.propTypes = {
-  postList: PropTypes.array,
+  postList: PropTypes.object,
   onUpVote: PropTypes.func,
   onDownVote: PropTypes.func
 };
