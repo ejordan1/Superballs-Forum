@@ -2,7 +2,8 @@ import React from "react";
 import v4 from "UUID";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
+import c from "./../constants";
 
 const CreatePost = (props) => {
   let _title = null;
@@ -15,7 +16,7 @@ const CreatePost = (props) => {
     // props.onNewFormPost({ title: _title.value, bodyText: _bodyText.value, upVotes: 0, downVotes: 0, id: v4() });
 
     const action = {
-      type: "NEW_GALLERY_POST",
+      type: c.NEW_GALLERY_POST,
       id: v4(),
       title: _title.value,
       bodyText: _bodyText.value
@@ -23,7 +24,6 @@ const CreatePost = (props) => {
     dispatch(action);
     _title.value = "";
     _bodyText.value = "";
-
   }
 
   return (

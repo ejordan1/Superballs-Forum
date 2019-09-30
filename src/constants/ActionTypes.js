@@ -1,0 +1,1 @@
+export const NEW_GALLERY_POST = "NEW_GALLERY_POST";

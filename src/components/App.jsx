@@ -7,7 +7,7 @@ import v4 from "UUID";
 import Header from "./Header";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { Switch, Route, withRouter } from 'react-router-dom';
+import { Switch, Route, withRouter } from "react-router-dom";
 
 class App extends React.Component {
   // constructor(props) {
@@ -79,3 +79,12 @@ const mapStateToProps = state => {
 };
 
 export default withRouter(connect(mapStateToProps)(App));
+
+
+
+/*
+when you upvote it would need to know which forum you are upvoting from so it can get the right one and the right id. how to do this?
+same thing for making the post
+
+
+*/

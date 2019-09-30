@@ -14,7 +14,6 @@ const Forum = (props) => {
 
   return (
     <div>
-
       {Object.keys(props.postList).map(function (postId) {
         var post = props.postList[postId];
         return <Post
@@ -26,7 +25,7 @@ const Forum = (props) => {
           // onDownVote={props.onDownVote}
           key={postId}
           postId={postId}
-        />
+        />;
       })}
     </div>
   );
